@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div id="main">
     
-    <input type="text" placeholder='search...' onChange={event=>{setSearchTerm(event.target.value)}} />
+    <input type="text" placeholder='search...' id="search-input"  onChange={event=>{setSearchTerm(event.target.value)}} />
 
         <h1>Result:--*--*++*-----</h1>
 
