@@ -14,12 +14,12 @@ const App = () => {
   
   return (
     <div id="main">
-     <h2>Search</h2>
-
+   
        
         <input type="text" id="search-input" placeholder='search...' onChange={event=>{setSearchTerm(event.target.value)}} />
 
-        <h1>Result:-</h1>
+      
+
         <ul className="list">
         {searchArray.filter((user)=>{
           if(searchTerm==''){
