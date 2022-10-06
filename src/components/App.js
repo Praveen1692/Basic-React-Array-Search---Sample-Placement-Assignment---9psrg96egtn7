@@ -5,45 +5,51 @@ import '../styles/App.css';
 
 const searchArray = ["Newton", "School", "Newton School", "React", "Preact", "Node", "Mongoose", "Angular", "Vue", "Apple", "Microsoft", "Netflix", "Meta"]
 const App = () => {
-  
-  
-   const[searchTerm,setSearchTerm]=useState('');
+  const[searchTerm,setSearchTerm]=useState('');
 
+  
+   
 
-  const updatedList=searchArray.filter((val)=>{
-    //if(searchTerm==''){
-     // return val=="";
-    if(val.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())){
-      return <li key={val.toString()}>{val}</li>
-    }
-    
-  })
 
   
   return (
     <div id="main">
-    
-    <input type="text" placeholder='search...' id="search-input"  onChange={event=>{setSearchTerm(event.target.value)}} />
+     <h2>Search</h2>
 
-        <h1>Result:--*--*++*-----</h1>
+       
+        <input type="text" id="search-input" placeholder='search...' onChange={event=>{setSearchTerm(event.target.value)}} />
 
-
-
-
-       { /*  } {searchArray.filter((val)=>{
-          if(searchTerm==""){
-            return val=="";
-          }else if(val.toLocaleLowerCase().includes(searchTerm.toLowerCase())){
-            return <li> {val}</li>
-
+        <h1>Result:-</h1>
+        <ul className="list">
+        {searchArray.filter((user)=>{
+          if(searchTerm==''){
+            return user=="";
           }
+          return user.toLowerCase().includes(searchTerm)
+        }).map((user)=>{
+          return <li>{user}</li>
         })}
-      c*/}
 
+
+
+</ul>
+
+
+       
      
 
 
-      <ul>{updatedList}</ul>
+      
+       
+
+      
+        
+   
+      
+        
+      
+    
+   
       
     </div>
   )
